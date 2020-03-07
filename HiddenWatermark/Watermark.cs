@@ -29,7 +29,7 @@ namespace HiddenWatermark
         private RgbData _watermarkPixels;
         private byte[] _watermarkDiff;
 
-        private const int WatermarkSize = 32;
+        private const int WatermarkSize = 64;
         private const int DiffWidth = 512;
         private const int DiffHeight = 512;
         private const int BlockSize = 4;
