@@ -9,7 +9,7 @@ environment:
 build_script:
 - msbuild
 after_build:
-- XCOPY "WatermarkDemo\bin\%CONFIGURATION%" "artifacts\WatermarkDemo" /s /i
+- XCOPY "WatermarkingDemo\bin\%CONFIGURATION%" "artifacts\WatermarkingDemo" /s /i
 artifacts:
 - path: artifacts\**\*.*
 test:
