@@ -11,7 +11,7 @@ build_script:
 after_build:
 - XCOPY "WatermarkingDemo\bin\%CONFIGURATION%" "artifacts\WatermarkingDemo" /s /i
 artifacts:
-- path: artifacts\**\*.*
+- path: artifacts
 test:
   # only assemblies to test
   assemblies:
