@@ -71,7 +71,7 @@ namespace HiddenWatermark
             _watermarkPixels = _imageHelper.ReadPixels(watermarkBytes);
             if (_watermarkPixels.Height != WatermarkSize || _watermarkPixels.Width != WatermarkSize)
             {
-                throw new WatermarkException("Watermark must be 32x32 image");
+                throw new WatermarkException($"Watermark must be {WatermarkSize}x{WatermarkSize} image");
             }
             GenerateWatermarkDiff();
         }
