@@ -9,7 +9,7 @@ environment:
 build_script:
 - msbuild
 after_build:
-- (robocopy "WatermarkingDemo\bin\%CONFIGURATION%" "artifacts\WatermarkingDemo") ^& IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0
+- XCOPY "WatermarkDemo\bin\%CONFIGURATION%\*" "artifacts\WatermarkDemo" /s /i
 artifacts:
 - path: artifacts\**\*.*
 test:
