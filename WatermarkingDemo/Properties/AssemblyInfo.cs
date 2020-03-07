@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WatermarkingDemo")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("电子水印添加/提取工具 -- U.T.P专版")]
+[assembly: AssemblyDescription("一个为图片添加电子水印的小程序")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WatermarkingDemo")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyProduct("UTPWatermark")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -1,23 +1,23 @@
 ﻿<Window x:Class="WatermarkingDemo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="600" Width="800">
+        Title="电子水印添加/提取工具 -- U.T.P 专版" Height="600" Width="837.2" Icon="AppIcon.ico" ResizeMode="CanMinimize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />          
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="45*"/>
             <ColumnDefinition Width="45*"/>
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
-        
-        
+
+
         <StackPanel Grid.ColumnSpan="3">
-            <TextBlock Text="Watermarking Demo" FontWeight="ExtraBold" FontSize="30" HorizontalAlignment="Center" />
+            <TextBlock Text="电子水印添加/提取工具 -- U.T.P 专版" FontWeight="ExtraBold" FontSize="24" Margin="0,5,0,2" VerticalAlignment="Center" HorizontalAlignment="Center" />
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <TextBlock x:Name="SimilarityText" FontSize="12" VerticalAlignment="Center" Padding="5" />
                 <Image x:Name="FailureImage" Source="Invalid.png" Height="25" Visibility="Collapsed" VerticalAlignment="Center" />
@@ -25,23 +25,26 @@
             </StackPanel>
         </StackPanel>
 
-        <Image x:Name="OriginalImage" Grid.Row="1" Grid.Column="0" Margin="5" />
-        <Image x:Name="WatermarkedImage" Grid.Row="1" Grid.Column="1" Margin="5" />
+        <Image x:Name="OriginalImage" Grid.Row="1" Grid.Column="0" Margin="5,5,4.8,88.2" />
+        <Image x:Name="WatermarkedImage" Grid.Row="1" Grid.Column="1" Margin="5.4,4.8,5.2,88.2" />
         <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center">
             <Image x:Name="RetrievedWatermark" Margin="5" />
         </StackPanel>
-        
+
         <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="5">
-            <Button x:Name="BtnLoadImage" Content="Load" Margin="5" Click="BtnLoadImage_Click" FontSize="16" />
-            <Button x:Name="BtnEmbedWatermark" Content="Embed Watermark" Margin="5" Click="BtnEmbedWatermark_Click" FontSize="16" />
+            <Button x:Name="BtnLoadImage" Content="载入原图" Margin="5,5,5,4.6" Click="BtnLoadImage_Click" FontSize="16" Width="75" />
+            <Button x:Name="BtnEmbedWatermark" Content="添加电子水印" Margin="5,5,5,4.6" Click="BtnEmbedWatermark_Click" FontSize="16" Width="107" />
             <TextBlock x:Name="EmbedTime" Margin="5" FontSize="12" />
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="5">
-            <Button x:Name="BtnSaveWatermarkedImage" Content="Save" Margin="5" Click="BtnSaveWatermarkedImage_Click" FontSize="16" />
-            <Button x:Name="BtnLoadWatermarkedImage" Content="Load" Margin="5" Click="BtnLoadWatermarkedImage_Click" FontSize="16" />
-            <Button x:Name="BtnRetrieveWatermark" Content="Retrieve Watermark" Margin="5" Click="BtnRetrieveWatermark_Click" FontSize="16" />
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="5.4,4.6,0.2,5.4">
+            <Button x:Name="BtnSaveWatermarkedImage" Content="保存处理过的图片" Margin="5,5,5,4.6" Click="BtnSaveWatermarkedImage_Click" FontSize="16" Width="135" />
+            <Button x:Name="BtnLoadWatermarkedImage" Content="载入处理过的图片" Margin="5,5,5,4.6" Click="BtnLoadWatermarkedImage_Click" FontSize="16" Width="135" />
+            <Button x:Name="BtnRetrieveWatermark" Content="提取水印" Margin="5,5,5,4.6" Click="BtnRetrieveWatermark_Click" FontSize="16" Width="70" />
             <TextBlock x:Name="RetrieveTime" Margin="5" FontSize="12" />
         </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Margin="171,380,0,0" Grid.Row="1" TextWrapping="Wrap" Text="原图" VerticalAlignment="Top" Height="21" Width="32" FontSize="16"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="138.4,379.8,0,0" Grid.Row="1" TextWrapping="Wrap" Text="处理后的图片" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="25.8,380,0,0" Grid.Row="1" TextWrapping="Wrap" Text="水印" VerticalAlignment="Top" FontSize="16"/>
     </Grid>
 </Window>
