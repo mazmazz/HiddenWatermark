@@ -11,12 +11,9 @@ init:
 before_build:
 - appveyor-retry dotnet restore -v Minimal
 build_script:
-- dotnet build "HiddenWatermark" -c %CONFIGURATION% --no-dependencies --version-suffix %LABEL%
-- dotnet build "WatermarkingDemo" -c %CONFIGURATION% --no-dependencies --version-suffix %LABEL%
-- dotnet build "HiddenWatermark.Tests" -c %CONFIGURATION% --no-dependencies --version-suffix %LABEL%
+- dotnet build "WatermarkingDemo.sln" -c %CONFIGURATION% --version-suffix %LABEL%
 after_build:
-- dotnet publish "HiddenWatermark" -c %CONFIGURATION% --no-build --version-suffix %LABEL% -o artifacts\HiddenWatermark
-- dotnet publish "WatermarkingDemo" -c %CONFIGURATION% --no-build --version-suffix %LABEL% -o artifacts\WatermarkingDemo
+- dotnet publish "WatermarkingDemo.sln" -c %CONFIGURATION% --no-build --version-suffix %LABEL% -o artifacts\WatermarkingDemo
 #test_script:
 #- dotnet test "test\MyFirstUnitTests" -c %CONFIGURATION%
 artifacts:
