@@ -32,7 +32,7 @@ namespace HiddenWatermark
         private const int WatermarkSize = 64;
         private const int DiffWidth = 1024;
         private const int DiffHeight = 1024;
-        private const int BlockSize = 8;
+        private const int BlockSize = 4;
 
         /// <summary>
         /// Turn clipping support on/off
