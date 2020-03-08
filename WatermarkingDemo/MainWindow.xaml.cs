@@ -39,7 +39,7 @@ namespace WatermarkingDemo
             _watermark = new Watermark(true);
         }
         
-        private boolean LoadWatermark()
+        private bool LoadWatermark()
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Image|*.jpg;*.png;*.gif;*.bmp";
