@@ -19,9 +19,11 @@ namespace WatermarkingDemo
     {
         private string _imageLocation;
         private string _watermarkImageLocation;
+        private string _watermarkLocation;
         private string _recoveredWatermarkLocation;
 
         private Watermark _watermark;
+        private byte[] _watermarkBytes;
 
         public MainWindow()
         {
@@ -35,6 +37,19 @@ namespace WatermarkingDemo
             RenderImageBytes(OriginalImage, fileBytes);
 
             _watermark = new Watermark(true);
+        }
+        
+        private boolean LoadWatermark()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image|*.jpg;*.png;*.gif;*.bmp";
+            if (ofd.ShowDialog() == true)
+            {
+                _watermarkLocation = ofd.FileName;
+                _watermarkBytes = File.ReadAllBytes(_watermarkLocation);
+                return true;
+            }
+            return false;
         }
 
         private void BtnLoadImage_Click(object sender, RoutedEventArgs e)
@@ -75,6 +90,11 @@ namespace WatermarkingDemo
         private void BtnEmbedWatermark_Click(object sender, RoutedEventArgs e)
         {
             var fileBytes = File.ReadAllBytes(_imageLocation);
+
+            if (LoadWatermark())
+            {
+                _watermark = new Watermark(_watermarkBytes, true);
+            }
 
             var sw = Stopwatch.StartNew();
             var embeddedBytes = _watermark.EmbedWatermark(fileBytes);
